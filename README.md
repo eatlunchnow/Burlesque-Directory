@@ -1,1 +1,1 @@
-# Burlesque-Directory
+# Burlesque Directory
