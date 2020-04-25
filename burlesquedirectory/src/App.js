@@ -1,13 +1,25 @@
-import React from "react"
-import Main from "./Main"
+import React, {Component} from "react"
+import Main from './components/Main';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import {AuthProvider} from './components/Auth';
+import PrivateRoute from './components/PrivateRoute';
+import SignUp from "./components/SignUp";
+import LogIn from "./components/LogIn";
 
-function App() {
-    return (
-        <div>
-            <h1>Burlesque Directory</h1>
-            <Main />
-        </div>
-    )
+class App extends Component {
+
+    render(){
+        return(
+            <AuthProvider>
+            <Router>
+                <div>
+                <PrivateRoute path="/" exact component={Main}/>
+                <Route path="/main" component={SignUp} />
+                <Route path="/login" component={LogIn}/>
+                </div>
+            </Router>
+            </AuthProvider>
+        );
+    }
 }
-
-export default App
+export default App;
