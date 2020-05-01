@@ -10,7 +10,6 @@ import About from './contents/About';
 import Form from './contents/Form';
 import Search from './contents/Search';
 import Contact from './contents/Contact';
-import Form2 from './contents/Form2';
 
 
 
@@ -33,9 +32,6 @@ function App() {
     </Route>
     <Route path="/contact">
     <Contact />
-    </Route>
-    <Route path="/form2">
-    <Form2 />
     </Route>
     </div>
     </Router>
