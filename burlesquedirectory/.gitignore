@@ -6,8 +6,9 @@
 .pnp.js
 
 #firebase
-Firebase
-Firebase.js
+fire.js
+Form.js
+
 
 # testing
 /coverage

@@ -1,25 +1,41 @@
-import React, {Component} from "react"
-import Main from './components/Main';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import {AuthProvider} from './components/Auth';
-import PrivateRoute from './components/PrivateRoute';
-import SignUp from "./components/SignUp";
-import LogIn from "./components/LogIn";
+import React from 'react';
 
-class App extends Component {
+import './styles.css';
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+import Navbar from './components/Navbar';
+import Home from './contents/Home';
+import About from './contents/About';
+import Form from './contents/Form';
+import Search from './contents/Search';
+import Contact from './contents/Contact';
 
-    render(){
-        return(
-            <AuthProvider>
-            <Router>
-                <div>
-                <PrivateRoute path="/" exact component={Main}/>
-                <Route path="/main" component={SignUp} />
-                <Route path="/login" component={LogIn}/>
-                </div>
-            </Router>
-            </AuthProvider>
-        );
-    }
-}
-export default App;
+
+function App() {
+  return (
+    <Router>
+    <div className="App">
+    <Navbar />
+    <Route exact path="/">
+    <Home />
+    </Route>
+    <Route path="/about">
+    <About />
+    </Route>
+    <Route path="/form">
+    <Form />
+    </Route>
+    <Route path="/search">
+    <Search />
+    </Route>
+    <Route path="/contact">
+    <Contact />
+    </Route>
+    </div>
+    </Router>
+    );
+  }
+  
+  export default App;
