@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './styles.css';
 import {
   BrowserRouter as Router,
@@ -10,7 +11,6 @@ import About from './contents/About';
 import Form from './contents/Form';
 import Search from './contents/Search';
 import Contact from './contents/Contact';
-
 
 
 function App() {
