@@ -1,18 +1,12 @@
-import React, { Component } from "react"
-import Dropdown from "../components/Dropdown"
+import React, { Component } from "react";
 
+class Form2 extends Component {
+	render(){
+		return(
+			<div>
+				<h1>Please, fill out the form.</h1>
 
-/* class Form2 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            fstate: 'California'
-        };
-    }
-    render() {
-    return (
-        <div className="condiv">
-             <h1>Burlesque Performer Form</h1>
+			{/* <h1>Burlesque Performer Form</h1>
             <form>
                 <p>Enter your burlesque name:</p>
                 <input type="text" />
@@ -82,16 +76,11 @@ import Dropdown from "../components/Dropdown"
 				<p>Website:</p>
                 <input type="text" />
             </form>
-			<p> <input type="submit" value="Submit" /></p> 
-        </div>
-    );
-    } 
-} */
+			<p> <input type="submit" value="Submit" /></p> */}
 
-function Form2() {
-	return(
-		<Dropdown />
-	)
+		</div>
+		);
+	}
 }
 
-export default Form2
+export default Form2;

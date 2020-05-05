@@ -11,30 +11,26 @@ import About from './contents/About';
 import Form from './contents/Form';
 import Search from './contents/Search';
 import Contact from './contents/Contact';
+import Form2 from './contents/Form2';
+import { AuthProvider } from "./components/Auth";
+import PrivateRoute from "./components/PrivateRoute";
 
 
 function App() {
   return (
-    <Router>
-    <div className="App">
-    <Navbar />
-    <Route exact path="/">
-    <Home />
-    </Route>
-    <Route path="/about">
-    <About />
-    </Route>
-    <Route path="/form">
-    <Form />
-    </Route>
-    <Route path="/search">
-    <Search />
-    </Route>
-    <Route path="/contact">
-    <Contact />
-    </Route>
-    </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/form" component={Form} />
+          <PrivateRoute exact path="/form2" component={Form2} />
+          <Route path="/search" component={Search} />
+          <Route path="/contact" component={Contact} />
+        </div>
+      </Router>
+    </AuthProvider>
     );
   }
   
