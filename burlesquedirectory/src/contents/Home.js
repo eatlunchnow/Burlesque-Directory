@@ -7,7 +7,7 @@ class Home extends Component {
         return (
             <div className="condiv home">
             <h1>Welcome to the Burlesque Directory!</h1>
-            <img src={homepic} className="homepic" alt=" "></img>
+             <img src={homepic} className="homepic" alt="Burlesque Singers"></img> 
             </div>
             )
         }

@@ -27,6 +27,7 @@ class Navbar extends Component {
             <Navitem item="Form" tolink="/form"  activec={this.activeitem}></Navitem>
             <Navitem item="Search" tolink="/search"  activec={this.activeitem}></Navitem>
             <Navitem item="Contact" tolink="/contact"  activec={this.activeitem}></Navitem>
+            <Navitem item="Form2" tolink="/form2"  activec={this.activeitem}></Navitem>
             </ul>
             </nav>
             )
