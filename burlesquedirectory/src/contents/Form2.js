@@ -102,7 +102,7 @@ class Form2 extends Component {
 			  onChange={this.handleUserInput}  />
 		  </div>
 		  <div className={`form-group ${this.errorClass(this.state.formErrors.bstate)}`}>
-			<label htmlFor="bstate">State: </label>
+			<label htmlFor="bstate">State (please enter full state name, no abbreviations): </label>
 			<input type="bstate" name="bstate"
 			 
 			  value={this.state.bstate}
