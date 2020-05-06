@@ -29,7 +29,6 @@ class Form extends Component {
 		firebase.auth().onAuthStateChanged(user => {
 		  this.setState({ isSignedIn: !!user })
 		  console.log("user", user)
-		  user.sendEmailVerification();
 		})
 	  }
 	
