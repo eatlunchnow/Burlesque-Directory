@@ -1,20 +1,6 @@
 import React, { Component } from "react"
-import firebase from 'firebase';
+import firebase from '../components/fire';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-
-
-/* class Form extends Component {
-    render() {
-        return (
-            <div className="condiv">
-                <h1>Fill out the form</h1>
-
-            </div>
-        )
-    }
-}
-
-export default Form */
 
 
 class Form extends Component {
@@ -42,7 +28,6 @@ class Form extends Component {
 		firebase.auth().onAuthStateChanged(user => {
 		  this.setState({ isSignedIn: !!user })
 		  console.log("user", user)
-		  user.sendEmailVerification();
 		})
 	  }
 	
@@ -54,8 +39,7 @@ class Form extends Component {
 			</p>
 			{this.state.isSignedIn ? 
 			<span>
-			 	<h1>Please check your email</h1>
-				
+			 	<h1>Please check your email.</h1>
 			</span>
 			 :
 			<StyledFirebaseAuth
@@ -63,8 +47,7 @@ class Form extends Component {
 				firebaseAuth={firebase.auth()}
 			/>
 			}
-			
-           {/*  <h1>Burlesque Performer Form</h1>
+			{/*  <h1>Burlesque Performer Form</h1>
             <form>
                 <p>Enter your burlesque name:</p>
                 <input type="text" />
@@ -136,8 +119,8 @@ class Form extends Component {
             </form>
 			<p> <input type="submit" value="Submit" /></p> */}
         </div>
-    );
+    	);
     } 
 }
 
-export default Form
+export default Form;
