@@ -25,10 +25,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/form" component={Form} />
-          {/* <PrivateRoute exact path="/form2" component={Form2} /> */}
+         <PrivateRoute exact path="/form2" component={Form2} />
           <Route path="/search" component={Search} />
           <Route path="/contact" component={Contact} />
-          <Route path="/form2" component={Form2} />
         </div>
       </Router>
     </AuthProvider>
