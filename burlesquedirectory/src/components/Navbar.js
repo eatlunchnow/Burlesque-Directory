@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Navitem from './Navitem';
+import Logo from '../components/Logo'
+//import Auth from '../components/Auth'
 
 class Navbar extends Component {
     constructor(props)
@@ -21,6 +23,7 @@ class Navbar extends Component {
     render() {
         return (
             <nav>
+                <Logo />
             <ul>
             <Navitem item="Home" tolink="/"  activec={this.activeitem}></Navitem>
             <Navitem item="About" tolink="/about"  activec={this.activeitem}></Navitem>
