@@ -112,5 +112,10 @@ h1,h2,h3,h4,p{
   {
     margin: 10px;
   }
+
+  .logo {
+    width: 10px;
+  margin: 10px;
+  }
   
 }
