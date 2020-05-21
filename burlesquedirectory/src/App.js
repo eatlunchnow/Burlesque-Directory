@@ -16,6 +16,7 @@ import { AuthProvider } from "./components/Auth";
 import PrivateRoute from "./components/PrivateRoute";
 
 
+
 function App() {
   return (
     <AuthProvider>
