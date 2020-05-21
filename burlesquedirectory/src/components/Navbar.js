@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navitem from './Navitem';
 import Logo from '../components/Logo'
-
+//import Auth from '../components/Auth'
 
 class Navbar extends Component {
     constructor(props)
