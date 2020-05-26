@@ -1,24 +1,8 @@
-import React from "react"
-import Hero from "../components/Hero";
-import Content from "../components/Content";
-import FormPost from "../components/FormPost"
+import React, { Component } from "react"
 // import Dropdown from "../components/Dropdown"
-//import FormErrors from "../components/FormErrors"
+import FormErrors from "../components/FormErrors"
 
-
-function Form2(props) {
-   
-	return (
-		<div>
-			<Hero title={props.title} />
-			<Content>
-		<FormPost />
-		</Content>
-		</div>
-		)
-	}
-
-/* class Form2 extends Component {
+class FormPost extends Component {
 	constructor (props) {
 	  super(props);
 	  this.state = {
@@ -193,8 +177,6 @@ function Form2(props) {
 		</div>
 	  )
 	}
-  } */
+  }
   
-  export default Form2;
-
-
+  export default FormPost;

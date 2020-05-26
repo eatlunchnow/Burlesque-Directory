@@ -1,5 +1,10 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" );
+@font-face {
+  font-family: myFirstFont;
+  src: url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Merriweather:wght@300&display=swap");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Moto&display=swap" );
 :root{
   --sidebar-flex:1.5;
   --condiv-flex:6;
@@ -13,13 +18,14 @@
   padding: 0;
 }
 body{
-  font-family: 'Raleway';
+  font-family: 'DM Motot';
 }
 .App
 {
   display: flex;
   width: 100vw;
   min-height: 100vh;
+  flex-direction: column;
 }
 nav
 {
@@ -27,6 +33,7 @@ nav
   flex:var(--sidebar-flex);
   background: rgb(238,103,143);
   background: #DAF7A6;
+  height: 30px;
 }
 .condiv
 {
@@ -44,26 +51,20 @@ nav
   
 }
 
-#flashMessage {
-  color: white;
-  background-color: #64ce83;
-  padding: 15px;
-  border-radius: 5px;
-  display: block;
-  width: calc(100% - 100px);
-  margin-bottom: 40px;
-}
-
 nav ul{
   font-size:var(--fontsize-nav) ;
   text-align: center;
   list-style-type: none;
   text-decoration: none;
   color: #000 !important;
+  padding: 0px;
+  left: 400px;
+  
 }
 nav ul li
 {
-  margin:40px;
+  margin:20px;
+  bottom: 300px;
 }
 
 a
@@ -93,12 +94,14 @@ h1,h2,h3,h4,p{
   .App
   {
     flex-direction: column;
+    height: 20px;
   }
   .sidebar
   {
     padding: 30px;
     background: #DAF7A6;
     background: #DAF7A6;
+    height: 15px;
   }
   .condiv
   {
@@ -107,15 +110,27 @@ h1,h2,h3,h4,p{
   nav ul
   {
     display: flex;
+    height: 20px;
   }
   nav ul li
   {
     margin: 10px;
+    height: 20px;
   }
 
   .logo {
     width: 10px;
   margin: 10px;
   }
-  
-}
+
+  .banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/bdbanner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+   
+  }
+    
+  }
+
