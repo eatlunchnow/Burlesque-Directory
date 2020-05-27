@@ -1,27 +1,10 @@
-import React from "react";
-import Hero from "../components/Hero";
-import Content from "../components/Content";
-import FormLogin from "../components/FormLogin"
+import React, { Component } from "react"
 // import firebase from 'firebase';
-//import firebase from '../components/fire';
-//import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import firebase from '../components/fire';
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 
-
-function Form(props) {
-   
-	return (
-		<div>
-			<Hero title={props.title} />
-			<Content>
-		<FormLogin />
-		</Content>
-		</div>
-		)
-	}
-
-
-/* class Form extends Component {
+class FormLogin extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -51,7 +34,7 @@ function Form(props) {
 	
     render() {
     return (
-        <div className="condiv">
+        <div>
 			<p>To fill in the form please enter your e-mail for verification or sign in using your Google, Facebook
 				or Twitter account
 			</p>
@@ -71,6 +54,6 @@ function Form(props) {
         </div>
     );
     } 
-} */
+}
 
-export default Form;
+export default FormLogin;

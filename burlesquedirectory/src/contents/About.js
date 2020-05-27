@@ -1,7 +1,27 @@
-import React, { Component } from "react"
+import React from "react"
+
+import Hero from "../components/Hero";
+import Content from "../components/Content";
 
 
-class About extends Component {
+function About(props) {
+   
+        return (
+            <div>
+                <Hero title={props.title} />
+                <Content>
+            <p>The Burlesque Directory is a place for burlesque performers to network and discover new talent. Word of mouth 
+                has always been the primary method for performers to find each other but this directory makes it easier 
+                to find fellow performers. 
+            </p>
+            </Content>
+            </div>
+            )
+        }
+    
+
+
+/* class About extends Component {
     render() {
         return (
             <div className="condiv">
@@ -13,6 +33,6 @@ class About extends Component {
             </div>
         )
     }
-}
+} */
 
-export default About
+export default About;
