@@ -18,7 +18,7 @@ import Search from './contents/Search';
 import Contact from './contents/Contact';
 import Form2 from './contents/Form2';
 import { AuthProvider } from "./components/Auth";
-import PrivateRoute from "./components/PrivateRoute";
+//import PrivateRoute from "./components/PrivateRoute";
 import Footer from "./components/Footer"
 
 
