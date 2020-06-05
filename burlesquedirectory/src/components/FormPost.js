@@ -23,6 +23,7 @@ class FormPost extends Component {
 		  formValid: false,
 		  showMe: false
 	  }
+	  this.changesSave = this.changesSave.bind(this);
 	}
   
 	changeHandler = (e) => {
@@ -78,7 +79,8 @@ class FormPost extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		console.log(this.state)
+		console.log(this.state);
+		this.changesSave();
 		fetch("https://jose-post.azurewebsites.net/api/postRequest", { 
 		  method: 'POST',
 		  body: JSON.stringify({ 
@@ -109,16 +111,27 @@ class FormPost extends Component {
 	}
   
 	render () {
+		const flashMessage = {
+			color:"white",
+			backgroundColor: "#64ce83",
+			padding: 15,
+			borderRadius: 5,
+			display: "block",
+			width: "calc(100% - 100px)",
+    		marginBottom: "40px"
+		}
+		
 	  return (
-		  <div className="condiv home">
-		<form onSubmit={this.handleSubmit}>
+		<div className="condiv home">
 		{
 			this.state.show?
-			<div id="flashMessage">
-			Your records have been saved successfully.
+			<div style={flashMessage}>
+				<h2>Your records have been saved successfully.</h2>
 			</div>
-			:null
-		}
+			:
+		<form onSubmit={this.handleSubmit}>
+		
+		<div> 
 		<h1>Burlesque Directory Form</h1>
 		<p>Please fill out the form</p>
 		<div>
@@ -172,8 +185,10 @@ class FormPost extends Component {
 			value={this.state.Website}
 			onChange={this.changeHandler}></input></p>
 
-		 <p><button type="submit" onClick={()=> this.changesSave()} disabled={!this.state.formValid}>Submit</button></p>
+		 <p><button type="submit" disabled={!this.state.formValid}>Submit</button></p>
+		</div>
 		</form>
+	}
 		</div>
 	  )
 	}
