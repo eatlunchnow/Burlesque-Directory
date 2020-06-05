@@ -1,13 +1,12 @@
 import React from 'react';
-//import homepic from '../img/burlesquesinger.jpg';
-//import Header from "../components/Header"
 import Hero from "../components/Hero";
+
 
 function Home(props){
     return(
         <div>
             <Hero title={props.title} subTitle={props.subTitle}/>
-           
+           {/* <img styling={{alignItems: "center", justifyContent: "center", display: "flex"}} src={homepic} className="homepic" alt="burlesque singers"/> */}
         </div>
     )
 }
