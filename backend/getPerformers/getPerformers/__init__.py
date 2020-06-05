@@ -22,8 +22,13 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         conct = pyodbc.connect(os.environ['DatabaseConnectionString'])
         cursor = conct.cursor()
         logging.debug("Database connection successful")
+        city = req.params.get('City') 
+        pstate = req.params.get('Pstate') 
+        logging.debug(req.params)
+        logging.debug(req.route_params)
         #query to select everything from the Performers table and put results in a tuple then convert tuples into dictionary
-        qry = cursor.execute('''SELECT * FROM [dbo].[Performers] ''').fetchall()
+        # qry = cursor.execute('''SELECT * FROM [dbo].[Performers] ''').fetchall()
+        qry = cursor.execute('''SELECT * FROM [dbo].[Performers] WHERE City = ? OR Pstate = ?''', city, pstate).fetchall()
         logging.debug("Database query successful")
         column_names = [column[0] for column in cursor.description]
         rows = [dict(zip(column_names, row)) for row in qry]

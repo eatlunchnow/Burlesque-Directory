@@ -18,8 +18,9 @@ import Search from './contents/Search';
 import Contact from './contents/Contact';
 import Form2 from './contents/Form2';
 import { AuthProvider } from "./components/Auth";
-import PrivateRoute from "./components/PrivateRoute";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
+import logo from "./img/bdlogo.png"
+
 
 
 
@@ -64,7 +65,7 @@ class App extends React.Component{
       <Router>
         <Container className="p-0" fluid={true}>
           <Navbar className="border-bottom" bg="transparent" expand="lg">
-            <Navbar.Brand>Burlesque Directory</Navbar.Brand >
+            <Navbar.Brand><img style={{width: "50px", height: "50px"}} src={logo} className="logo" alt="logo"/>Burlesque Directory</Navbar.Brand >
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
             <Navbar.Collapse id="navbar=toggle">
               <Nav className="ml-auto">

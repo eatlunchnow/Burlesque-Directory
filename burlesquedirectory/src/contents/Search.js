@@ -11,8 +11,7 @@ function Search(props) {
 		<div>
 			<Hero title={props.title} />
 			<Content>
-        <h3 style={{color: "#ff0000", fontWeight: "bold"}}>WORK IN PROGRESS</h3>
-        <p>Search for performers by city or state</p>
+        <p style={{textAlign:"center"}}>Search for performers by city or state</p>
 		<SearchGet />
 		</Content>
 		</div>
