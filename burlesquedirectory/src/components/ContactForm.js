@@ -1,37 +1,63 @@
 import React, { useState } from 'react'
-import { Axios, db } from '../firebase/firebaseConfig'
+import { Axios } from '../firebase/firebaseConfig'
+
 
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({})
+ 
 
   const updateInput = e => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     })
   }
+
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null
+  })
+
+  const handleServerResponse = (ok, msg) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg }
+    })
+    if (ok) {
+      formData({
+        name: '',
+        email: '',
+        message: ''
+      })
+    }
+  }
+
   const handleSubmit = event => {
-    event.preventDefault()
+    // alert("Message sent")
+    event.preventDefault();
+    setServerState({ submitting: true })
     sendEmail()
     setFormData({
       name: '',
       email: '',
       message: '',
-    })
+    }) 
   }
+
+
   const sendEmail = () => {
+    
+    
     Axios.post(
       'https://us-central1-burlesquedirectory-6e6d1.cloudfunctions.net/submit',
       formData
     )
       .then(res => {
-        db.collection('emails').add({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          time: new Date(),
-        })
+        handleServerResponse(true, "Thank you! We will be in touch soon.")
+      })
+      .catch(res => {
+        handleServerResponse(false, res.response.data.error)
       })
       .catch(error => {
         console.log(error)
@@ -62,7 +88,12 @@ const ContactForm = () => {
           onChange={updateInput}
           value={formData.message || ''}
         ></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={serverState.submitting}>Submit</button>
+        {serverState.status && (
+          <p className={!serverState.status.ok ? "errorMsg" : ""}>
+            {serverState.status.msg}
+          </p>
+        )}
       </form>
     </>
   )
