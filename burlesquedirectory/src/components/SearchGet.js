@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Table } from "reactstrap";
 
 function SearchGet() {
     const [city, setCity] = useState("");
@@ -46,14 +47,40 @@ function SearchGet() {
   
         {result.map(result => (
           <>
-          <h4>Performer Name:</h4> {result.PerformerName}
+          <Table bordered responsive>
+            <thead>
+              <tr>
+                <th colSpan="2">Performer Name: </th>
+                <th colSpan="2">Email: </th>
+                <th colSpan="2">City: </th>
+                <th colSpan="2">State: </th>
+                <th colSpan="2">Website: </th>
+                <th colSpan="2">Facebook: </th>
+                <th colSpan="2">Instagram: </th>
+                <th colSpan="2">Twitter: </th>
+              </tr>
+            </thead>
+              <tbody>
+              <tr>
+                <td colSpan="2">{result.PerformerName}</td>
+                <td colSpan="2">{result.Email}</td>
+                <td colSpan="2">{result.City}</td>
+                <td colSpan="2">{result.Pstate}</td>
+                <td colSpan="2">{result.Website}</td>
+                <td colSpan="2">{result.Facebook}</td>
+                <td colSpan="2">{result.Instagram}</td>
+                <td colSpan="2">{result.Twitter}</td>
+              </tr>
+            </tbody>
+          </Table>
+          {/* <h4>Performer Name:</h4> {result.PerformerName}
           <h4>Performer Email:</h4> {result.Email}
           <h4>Performer City:</h4> {result.City}
           <h4>Performer State:</h4> {result.Pstate}
           <h4>Performer Facebook:</h4> {result.Facebook}
           <h4>Performer Instagram:</h4> {result.Instagram}
           <h4>Performer Twitter:</h4> {result.Twitter}
-          <h4>Performer Website:</h4> {result.Website}
+          <h4>Performer Website:</h4> {result.Website} */}
           </>
         ))}
       </div>
