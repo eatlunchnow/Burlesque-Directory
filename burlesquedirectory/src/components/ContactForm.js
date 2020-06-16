@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import { Axios } from '../firebase/firebaseConfig'
+import { Axios } from "../firebase/firebaseConfig";
 
 
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({})
- 
 
-  const updateInput = e => {
+  const [formData, setFormData] = useState({}) 
+
+  
+  const updateInput = event => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [event.target.name]: event.target.value
     })
   }
 
@@ -31,7 +32,7 @@ const ContactForm = () => {
         message: ''
       })
     }
-  }
+}
 
   const handleSubmit = event => {
     // alert("Message sent")
@@ -42,7 +43,8 @@ const ContactForm = () => {
       name: '',
       email: '',
       message: '',
-    }) 
+    })
+    
   }
 
 
@@ -62,7 +64,9 @@ const ContactForm = () => {
       .catch(error => {
         console.log(error)
       })
-  }
+     }
+
+     
 
   return (
     <>
