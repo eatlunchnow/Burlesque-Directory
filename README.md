@@ -6,16 +6,16 @@ The Burlesque Directory provides a form for performers to fill out their informa
 App was built with React Native using Azure SQL database and Azure function apps for GET and POST APIs. 
 
 Work done by Kiara:
-Devised concept
-Designed app layout
-Created and oversaw Azure function app resources
-Database creation and management
-Built forms with validation
-Developed GET API
-Composed SQL queries for API
-Implemented search input functionality 
+<br>Devised concept</br>
+<br>Designed app layout</br>
+<br>Created and oversaw Azure function app resources</br>
+<br>Database creation and management</br>
+<br>Built forms with validation</br>
+<br>Developed GET API</br>
+<br>Composed SQL queries for API</br>
+<br>Implemented search input functionality</br> 
 
 Work done by Jose:
-Created database secret key
-Developed POST API
-Implemented log in
+<br>Created database connection and secret key</br>
+<br>Developed POST API</br>
+<br>Implemented log in with Firebase</br>
